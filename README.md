@@ -52,50 +52,6 @@ laboratorio4/
 | `--tarjeta`    | `#313244` | Tarjetas y formulario      |
 | `--exito`      | `#a6e3a1` | Verde — página de resultado|
 
----
-
-## Cómo ver el proyecto localmente
-
-1. Clonar o descargar la carpeta `laboratorio4/`
-2. Abrir `index.html` en cualquier navegador moderno
-3. No requiere servidor ni instalación adicional
-
----
-
-## Subir a GitHub
-
-```bash
-# Dentro de la carpeta laboratorio4/
-git init
-git add .
-git commit -m "feat: portafolio web — Laboratorio 4"
-git remote add origin https://github.com/TU_USUARIO/laboratorio4.git
-git branch -M main
-git push -u origin main
-```
-
----
-
-## Publicar en GitHub Pages
-
-1. En tu repositorio ve a **Settings → Pages**
-2. En *Source* selecciona la rama `main` y la carpeta `/ (root)`
-3. Clic en **Save** — GitHub generará la URL automáticamente:  
-   `https://TU_USUARIO.github.io/laboratorio4/`
-
-## Publicar en Netlify
-
-1. Crea una cuenta en [netlify.com](https://netlify.com)
-2. **Add new site → Import an existing project** y conecta tu repositorio de GitHub
-3. En *Publish directory* escribe `.` (punto — raíz del proyecto)
-4. Clic en **Deploy site**
-
-## Publicar en Vercel
-
-1. Crea una cuenta en [vercel.com](https://vercel.com)
-2. **New Project → Import** tu repositorio de GitHub
-3. Framework preset: **Other** (HTML estático)
-4. Clic en **Deploy**
 
 ---
 

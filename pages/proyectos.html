@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyectos | Sebastián</title>
+  <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+  <!-- header con reloj incluido -->
+  <header>
+    <div class="contenedor">
+      <a href="../index.html" class="logo">&lt;/Sebastián&gt;</a>
+
+      <nav>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="sobre-mi.html">Sobre mí</a></li>
+          <li><a href="proyectos.html" class="activo">Proyectos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- reloj actualizado por main.js -->
+      <span class="reloj-header" id="reloj">00:00:00</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="contenedor">
+
+      <!-- grilla de proyectos reales -->
+      <section>
+        <h2>Mis Proyectos</h2>
+        <div class="grid-tarjetas">
+
+          <article class="tarjeta">
+            <h3>Bot de Trading Automatizado</h3>
+            <!-- tecnologías en rosado, definido en el CSS -->
+            <p class="tecnologias">Python &mdash; PostgreSQL &mdash; MetaTrader 5</p>
+            <p>
+              Bot que ejecuta operaciones de compra y venta de forma autónoma en el mercado de divisas
+              (Forex). Se conecta a MetaTrader 5 para obtener datos de precio en tiempo real, aplica
+              estrategias basadas en indicadores técnicos y registra cada operación en PostgreSQL.
+            </p>
+          </article>
+
+          <article class="tarjeta">
+            <h3>Análisis de Apuestas Deportivas</h3>
+            <p class="tecnologias">Python &mdash; PostgreSQL &mdash; Tkinter</p>
+            <p>
+              Aplicación de escritorio que recopila y analiza datos de resultados deportivos para identificar
+              patrones estadísticos. Interfaz gráfica en Tkinter con filtros, métricas y almacenamiento
+              del historial en PostgreSQL.
+            </p>
+          </article>
+
+          <article class="tarjeta">
+            <h3>Sistema de Facturación</h3>
+            <p class="tecnologias">C# &mdash; SQL Server &mdash; Windows Forms</p>
+            <p>
+              Sistema de gestión empresarial para emisión y control de facturas. Permite registrar
+              clientes, productos e impuestos, generar comprobantes y mantener historial completo
+              de transacciones en SQL Server.
+            </p>
+          </article>
+
+          <article class="tarjeta">
+            <h3>Plataforma de Préstamos</h3>
+            <p class="tecnologias">PHP &mdash; MySQL</p>
+            <p>
+              Plataforma web para gestión de solicitudes y seguimiento de préstamos. Incluye
+              autenticación de usuarios, cálculo de cuotas e intereses, panel administrativo
+              y reportes de cartera almacenados en MySQL.
+            </p>
+          </article>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="contenedor">
+      <p>© 2026 Sebastián | Laboratorio 4 - Desarrollo Web</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

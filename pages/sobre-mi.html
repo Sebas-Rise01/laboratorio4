@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre mí | Sebastián</title>
+  <!-- ruta relativa porque estamos dentro de /pages -->
+  <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+  <!-- header igual en todas las páginas -->
+  <header>
+    <div class="contenedor">
+      <a href="../index.html" class="logo">&lt;/Sebastián&gt;</a>
+
+      <nav>
+        <!-- "activo" va en el link de esta página -->
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="sobre-mi.html" class="activo">Sobre mí</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- reloj actualizado por main.js -->
+      <span class="reloj-header" id="reloj">00:00:00</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="contenedor">
+
+      <!-- presentación personal -->
+      <section class="sobre-mi">
+        <h2>Sobre mí</h2>
+        <p>
+          Soy Sebastián, desarrollador de software con sede en Medellín, Colombia.
+          Me apasiona resolver problemas complejos mediante la programación, con enfoque en
+          la automatización, el análisis de datos y el desarrollo de sistemas funcionales y bien estructurados.
+        </p>
+        <p>
+          Actualmente curso la carrera de desarrollo de software y combino los estudios con
+          proyectos personales que me permiten aplicar y ampliar continuamente mis conocimientos.
+        </p>
+      </section>
+
+      <!-- lista no ordenada de formación -->
+      <section class="sobre-mi">
+        <h3>Formación y experiencia</h3>
+        <ul>
+          <li>Estudiante de Desarrollo de Software — Universidad, Medellín</li>
+          <li>Curso de Python aplicado a finanzas y automatización</li>
+          <li>Desarrollo de proyectos personales con Python, C#, PHP y SQL</li>
+          <li>Manejo de bases de datos relacionales: PostgreSQL, MySQL, SQL Server</li>
+          <li>Integración de APIs y manejo de datos financieros en tiempo real</li>
+          <li>Diseño de interfaces de escritorio con Windows Forms y Tkinter</li>
+        </ul>
+      </section>
+
+      <!-- lista ordenada de intereses -->
+      <section class="sobre-mi">
+        <h3>Intereses</h3>
+        <ol>
+          <li>Automatización de procesos repetitivos con scripts en Python</li>
+          <li>Análisis de datos financieros y deportivos</li>
+          <li>Desarrollo de sistemas de gestión empresarial</li>
+          <li>Diseño de bases de datos eficientes</li>
+          <li>Seguridad en aplicaciones web</li>
+          <li>Inteligencia artificial aplicada a la predicción de datos</li>
+        </ol>
+      </section>
+
+      <!-- tabla de datos rápidos con thead y tbody -->
+      <section>
+        <h3>Datos rápidos</h3>
+        <div class="tabla-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Campo</th>
+                <th>Información</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Nombre</td>
+                <td>Sebastián</td>
+              </tr>
+              <tr>
+                <td>Ubicación</td>
+                <td>Medellín, Colombia</td>
+              </tr>
+              <tr>
+                <td>Lenguajes</td>
+                <td>Python, C#, PHP, SQL, HTML, CSS</td>
+              </tr>
+              <tr>
+                <td>Herramientas</td>
+                <td>PostgreSQL, MySQL, SQL Server, MetaTrader 5, Windows Forms, Tkinter</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="contenedor">
+      <p>© 2026 Sebastián | Laboratorio 4 - Desarrollo Web</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+# por si acaso, nunca subir carpetas de configuración del editor
+.claude/
+.vscode/
+.idea/
+
+# archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini

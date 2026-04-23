@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sebastián | Portafolio</title>
+  <!-- hoja de estilos única para todo el sitio -->
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <!-- encabezado fijo con logo, nav y reloj -->
+  <header>
+    <div class="contenedor">
+      <span class="logo">&lt;/Sebastián&gt;</span>
+
+      <nav>
+        <!-- "activo" marca la página actual -->
+        <ul>
+          <li><a href="index.html" class="activo">Inicio</a></li>
+          <li><a href="pages/sobre-mi.html">Sobre mí</a></li>
+          <li><a href="pages/proyectos.html">Proyectos</a></li>
+          <li><a href="pages/contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- el reloj lo llena main.js cada segundo -->
+      <span class="reloj-header" id="reloj">00:00:00</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="contenedor">
+
+      <!-- sección de bienvenida -->
+      <section class="hero">
+        <h1>Hola, soy Sebastián</h1>
+        <p class="subtitulo">Desarrollador de software</p>
+        <p>
+          Apasionado por construir soluciones eficientes usando tecnologías como
+          <strong>Python</strong>, <strong>C#</strong>, <strong>PHP</strong> y <strong>SQL</strong>.
+          Me especializo en automatización, análisis de datos y desarrollo de sistemas de gestión.
+        </p>
+        <a href="pages/proyectos.html" class="btn">Ver mis proyectos</a>
+      </section>
+
+      <!-- tarjetas de habilidades con grid automático -->
+      <section>
+        <h2>Habilidades</h2>
+        <div class="grid-tarjetas">
+
+          <article class="tarjeta">
+            <h3>Python</h3>
+            <p>Desarrollo de scripts, automatización de procesos, análisis de datos y bots. Principal lenguaje de trabajo.</p>
+          </article>
+
+          <article class="tarjeta">
+            <h3>C#</h3>
+            <p>Aplicaciones de escritorio con Windows Forms y sistemas de gestión empresarial con .NET Framework.</p>
+          </article>
+
+          <article class="tarjeta">
+            <h3>PHP</h3>
+            <p>Desarrollo de plataformas web del lado del servidor, integración con bases de datos MySQL y gestión de formularios.</p>
+          </article>
+
+          <article class="tarjeta">
+            <h3>SQL &amp; Bases de datos</h3>
+            <p>Diseño y consultas en PostgreSQL, MySQL y SQL Server. Modelado relacional y optimización de consultas.</p>
+          </article>
+
+          <article class="tarjeta">
+            <h3>HTML &amp; CSS</h3>
+            <p>Maquetación semántica con HTML5 y estilos modernos con CSS3. Diseño responsive sin dependencias externas.</p>
+          </article>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="contenedor">
+      <p>© 2026 Sebastián | Laboratorio 4 - Desarrollo Web</p>
+    </div>
+  </footer>
+
+  <!-- script al final para que el DOM ya esté listo -->
+  <script src="js/main.js"></script>
+</body>
+</html>

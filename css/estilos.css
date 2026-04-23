@@ -1,0 +1,475 @@
+/* lo primero siempre, quitar los estilos por defecto del navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* colores del tema, los saqué de la paleta Catppuccin Mocha */
+:root {
+  --fondo:       #1e1e2e; /* fondo principal, bien oscuro */
+  --texto:       #cdd6f4; /* texto general, un blanco suave */
+  --acento:      #89b4fa; /* azul para botones y detalles */
+  --acento-sec:  #f5c2e7; /* rosado para títulos secundarios */
+  --header-pie:  #181825; /* header y footer un poco más oscuro */
+  --tarjeta:     #313244; /* fondo de las tarjetas y formulario */
+  --exito:       #a6e3a1; /* verde para la página de resultado */
+  --hover-btn:   #b4cefe; /* azul más claro al pasar el mouse */
+  --borde-input: #45475a; /* borde gris para los inputs */
+}
+
+/* estilos base del body */
+body {
+  background-color: var(--fondo);
+  color: var(--texto);
+  font-family: Consolas, "Courier New", monospace; /* fuente tipo código */
+  line-height: 1.7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* para que el footer quede siempre abajo */
+}
+
+/* links sin subrayado por defecto */
+a {
+  color: var(--acento);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* contenedor centrado, uso max-width para que no se estire demasiado */
+.contenedor {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* header fijo arriba con una línea azul abajo */
+header {
+  background-color: var(--header-pie);
+  border-bottom: 2px solid var(--acento);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* logo y nav en fila, uno a cada lado */
+header .contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* reloj en el header, pequeño y discreto */
+.reloj-header {
+  font-size: 0.95rem;
+  color: var(--acento);
+  letter-spacing: 2px;
+  font-weight: bold;
+  min-width: 80px;
+  text-align: right;
+}
+
+/* el logo en rosado para que destaque */
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--acento-sec);
+  letter-spacing: 1px;
+}
+
+/* nav horizontal con los links en fila */
+nav ul {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+nav ul li a {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  border-radius: 4px;
+  color: var(--texto);
+  transition: background 0.2s, color 0.2s;
+}
+
+nav ul li a:hover {
+  background-color: var(--tarjeta);
+  text-decoration: none;
+}
+
+/* la página activa se resalta con fondo azul */
+nav ul li a.activo {
+  background-color: var(--acento);
+  color: #1e1e2e;
+  font-weight: bold;
+}
+
+/* main ocupa el espacio que sobra entre header y footer */
+main {
+  flex: 1;
+  padding: 2.5rem 0;
+}
+
+/* sección de bienvenida con gradiente diagonal */
+.hero {
+  background: linear-gradient(135deg, #181825 0%, #313244 100%);
+  border: 1px solid var(--tarjeta);
+  border-radius: 12px;
+  padding: 4rem 2.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  color: var(--acento);
+  margin-bottom: 0.6rem;
+}
+
+.hero .subtitulo {
+  font-size: 1.3rem;
+  color: var(--acento-sec);
+  margin-bottom: 1.2rem;
+}
+
+/* limito el ancho del párrafo para que no sea difícil de leer */
+.hero p {
+  max-width: 640px;
+  margin: 0 auto 2rem;
+  color: var(--texto);
+  opacity: 0.85;
+}
+
+/* botón azul con pequeño salto al hacer hover */
+.btn {
+  display: inline-block;
+  background-color: var(--acento);
+  color: #1e1e2e;
+  padding: 0.65rem 1.6rem;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn:hover {
+  background-color: var(--hover-btn);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+/* botón de limpiar, más discreto */
+.btn-reset {
+  background-color: var(--tarjeta);
+  color: var(--texto);
+  margin-left: 0.8rem;
+}
+
+.btn-reset:hover {
+  background-color: #45475a;
+}
+
+/* espacio entre secciones */
+section {
+  margin-bottom: 3rem;
+}
+
+/* títulos h2 en rosado con línea abajo */
+section h2 {
+  font-size: 1.6rem;
+  color: var(--acento-sec);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--tarjeta);
+}
+
+section h3 {
+  font-size: 1.15rem;
+  color: var(--acento);
+  margin-bottom: 0.8rem;
+}
+
+/* grid que acomoda las tarjetas automáticamente según el espacio */
+.grid-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+/* tarjeta con borde izquierdo azul, me gustó ese detalle */
+.tarjeta {
+  background-color: var(--tarjeta);
+  border-left: 4px solid var(--acento);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* efecto de elevación al pasar el mouse */
+.tarjeta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(137, 180, 250, 0.15);
+}
+
+.tarjeta h3 {
+  font-size: 1.1rem;
+  color: var(--acento);
+  margin-bottom: 0.6rem;
+}
+
+/* tecnologías en rosado y chiquito, debajo del título */
+.tarjeta .tecnologias {
+  font-size: 0.82rem;
+  color: var(--acento-sec);
+  margin-bottom: 0.7rem;
+}
+
+.tarjeta p {
+  font-size: 0.92rem;
+  opacity: 0.88;
+}
+
+/* estilos para la sección "sobre mí" */
+.sobre-mi p {
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.sobre-mi ul,
+.sobre-mi ol {
+  padding-left: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.sobre-mi li {
+  margin-bottom: 0.4rem;
+  opacity: 0.9;
+}
+
+/* wrapper para que la tabla no rompa el layout en pantallas pequeñas */
+.tabla-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--tarjeta);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* encabezado azul con texto oscuro */
+thead tr {
+  background-color: var(--acento);
+  color: #1e1e2e;
+}
+
+thead th {
+  padding: 0.8rem 1.2rem;
+  text-align: left;
+  font-weight: bold;
+}
+
+tbody td {
+  padding: 0.75rem 1.2rem;
+  border-bottom: 1px solid #45475a;
+}
+
+/* sin borde en la última fila */
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background-color: #3c3d52;
+}
+
+/* caja del formulario con fondo de tarjeta */
+.form-contacto {
+  background-color: var(--tarjeta);
+  border-radius: 10px;
+  padding: 2rem;
+  max-width: 700px;
+}
+
+/* cada campo del formulario en columna */
+.form-grupo {
+  margin-bottom: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+/* labels en rosado para que se vean bien */
+.form-grupo label {
+  font-size: 0.9rem;
+  color: var(--acento-sec);
+  font-weight: bold;
+}
+
+/* todos los inputs con el mismo estilo base */
+.form-grupo input[type="text"],
+.form-grupo input[type="email"],
+.form-grupo input[type="tel"],
+.form-grupo select,
+.form-grupo textarea {
+  background-color: var(--fondo);
+  color: var(--texto);
+  border: 1px solid var(--borde-input);
+  border-radius: 6px;
+  padding: 0.6rem 0.9rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+
+/* borde azul y sombra suave al hacer foco */
+.form-grupo input:focus,
+.form-grupo select:focus,
+.form-grupo textarea:focus {
+  outline: none;
+  border-color: var(--acento);
+  box-shadow: 0 0 0 3px rgba(137, 180, 250, 0.15);
+}
+
+/* textarea redimensionable solo verticalmente */
+.form-grupo textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+/* para que el fondo del select también sea oscuro */
+.form-grupo select option {
+  background-color: var(--fondo);
+}
+
+/* radio buttons en fila */
+.radio-grupo {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.radio-grupo label,
+.check-grupo label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  font-size: 0.93rem;
+}
+
+/* color azul en el check y radio nativo */
+.radio-grupo input[type="radio"],
+.check-grupo input[type="checkbox"] {
+  accent-color: var(--acento);
+  width: 1rem;
+  height: 1rem;
+}
+
+.form-acciones {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+/* caja de confirmación con borde verde */
+.resultado-box {
+  background-color: var(--tarjeta);
+  border-left: 4px solid var(--exito);
+  border-radius: 10px;
+  padding: 2.5rem;
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.resultado-box .icono-ok {
+  font-size: 3.5rem;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.resultado-box h2 {
+  color: var(--exito);
+  border: none;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.resultado-box p {
+  opacity: 0.88;
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
+}
+
+/* cuadro de explicación técnica sobre el método GET */
+.resultado-box .nota-get {
+  background-color: var(--fondo);
+  border: 1px solid var(--borde-input);
+  border-radius: 6px;
+  padding: 0.9rem 1.2rem;
+  font-size: 0.88rem;
+  color: var(--acento-sec);
+  margin-bottom: 1.8rem;
+  text-align: left;
+}
+
+/* footer simple, el mismo color que el header */
+footer {
+  background-color: var(--header-pie);
+  border-top: 2px solid var(--tarjeta);
+  padding: 1.2rem 0;
+  text-align: center;
+  font-size: 0.88rem;
+  color: #6c7086;
+}
+
+/* responsive para móvil, el header se apila en columna */
+@media (max-width: 600px) {
+  header .contenedor {
+    flex-direction: column;
+    gap: 0.8rem;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* menos padding en el hero para que no se corte */
+  .hero {
+    padding: 2.5rem 1.2rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .form-contacto {
+    padding: 1.2rem;
+  }
+
+  /* en móvil escondo el reloj para que no sature el header */
+  .reloj-header {
+    display: none;
+  }
+
+  /* los radio buttons en columna en pantallas pequeñas */
+  .radio-grupo {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+}

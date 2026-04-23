@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mensaje enviado | Sebastián</title>
+  <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+
+  <header>
+    <div class="contenedor">
+      <a href="../index.html" class="logo">&lt;/Sebastián&gt;</a>
+
+      <nav>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="sobre-mi.html">Sobre mí</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- reloj actualizado por main.js -->
+      <span class="reloj-header" id="reloj">00:00:00</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="contenedor">
+
+      <section>
+        <h2 style="text-align:center; margin-bottom: 2rem;">Resultado del envío</h2>
+
+        <!-- caja de confirmación con borde verde -->
+        <div class="resultado-box">
+          <span class="icono-ok">&#10003;</span>
+          <h2>¡Mensaje enviado correctamente!</h2>
+          <p>
+            Gracias por ponerte en contacto. Tus datos han sido recibidos y te responderé
+            a la brevedad posible al medio de contacto que indicaste.
+          </p>
+
+          <!-- explicación técnica del método GET para el lab -->
+          <div class="nota-get">
+            <strong>Nota técnica — Método GET:</strong><br><br>
+            Los datos del formulario fueron enviados usando el método <code>GET</code>.
+            Esto significa que cada campo queda visible directamente en la URL:<br><br>
+            <code>resultado.html?nombre=Juan&amp;correo=juan@mail.com&amp;mensaje=Hola...</code><br><br>
+            Este método sirve para demostrar la transferencia de parámetros entre páginas,
+            pero <strong>no debe usarse con datos sensibles</strong> en producción.
+            Para esos casos se usa <code>POST</code>.
+          </div>
+
+          <a href="../index.html" class="btn">Volver al inicio</a>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="contenedor">
+      <p>© 2026 Sebastián | Laboratorio 4 - Desarrollo Web</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
